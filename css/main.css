@@ -65,7 +65,6 @@ input[class^="btn-"]:hover {
 	text-align: center;
 }
 
-
 .section-title {
 	font-size: 2rem;
 	display: block;
@@ -82,7 +81,6 @@ input[class^="btn-"]:hover {
 	display: block;
 	margin: 0 auto 1rem auto;
 }
-
 
 .items {
 	display: flex;
@@ -185,7 +183,6 @@ input[class^="btn-"]:hover {
 	margin: 0;
 }
 
-
 * {
 	margin: 0;
 	padding: 0;
@@ -206,7 +203,6 @@ a.link-button {
 	text-decoration: none;
 }
 
-
 ul {
 	list-style: none;
 }
@@ -225,8 +221,6 @@ h3 {
 img {
 	width: 100%;
 }
-
-
 
 /* Global Components */
 
@@ -265,7 +259,8 @@ img {
 }
 
 #header-home {
-	background: url("https://source.unsplash.com/sp-p7uuT0tw/2560x1440") no-repeat center right/cover;
+	background: url("https://source.unsplash.com/sp-p7uuT0tw/2560x1440") no-repeat
+		center right/cover;
 	height: 100vh;
 	color: #fff;
 }
@@ -289,12 +284,10 @@ img {
 	border-bottom: 3px solid #d92b04;
 }
 
-
 #home-a .specials .fas {
 	color: #d92b04;
 	padding-bottom: 0.4rem;
 }
-
 
 #home-b .stats li {
 	line-height: 2;
@@ -320,7 +313,6 @@ img {
 #home-b .stats div:nth-child(even) {
 	background: #f2790f;
 }
-
 
 #home-c .process-step {
 	position: absolute;
@@ -370,8 +362,6 @@ img {
 	border-left: 3px solid #d92b04;
 	padding: 0.8rem;
 }
-
-
 
 #about-a .award-1 .fas,
 #about-a .award-2 .fas,
@@ -457,33 +447,78 @@ img {
 
 #contact-a .text-fields {
 	display: grid;
-	grid-template-areas: "name email""subject phone""message message";
-	grid-gap: 1.2rem;
-	margin-bottom: 1.2rem;
+	grid-template-areas: "name email" "subject phone" "message message";
+	grid-gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+#contact-a .text-fields .input-group {
+	position: relative;
+}
+
+#contact-a .submit-group {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+#contact-a .text-fields .info {
+	position: absolute;
+	color: #d92b04;
+	margin-left: 5px;
+	bottom: -20px;
+}
+
+#contact-a .alert-box {
+	position: absolute;
+	top: -45px;
+	background-color: #d4edda;
+	font-size: 24px;
+	padding: 5px 25px;
+	display: none;
 }
 
 #contact-a .text-fields .name-input {
 	grid-area: name;
-}
-
-#contact-a .text-fields .subject-input {
-	grid-area: subject;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
 }
 
 #contact-a .text-fields .email-input {
 	grid-area: email;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+}
+
+#contact-a .text-fields .subject-input {
+	grid-area: subject;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
 }
 
 #contact-a .text-fields .phone-input {
 	grid-area: phone;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
 }
 
 #contact-a .text-fields .message-input {
 	grid-area: message;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+}
+
+#contact-a .text-fields .text-message {
 	height: 100px;
 }
 
-#contact-a .text-fields .text-input {
+#contact-a .text-fields .text-input,
+#contact-a .text-fields .text-message {
 	padding: 0.5rem 1rem;
 }
 
@@ -529,10 +564,6 @@ img {
 	font-size: 1.5rem;
 	color: #fff;
 }
-
-
-
-
 
 #main-footer .footer-content .social .fab:hover {
 	background: #d92b04;
@@ -602,14 +633,11 @@ img {
 		margin-top: 1rem;
 	}
 
-
-
 	#header-home {
 		height: 40vh;
 		border-bottom: 3px solid #d92b04;
 		background-position: 20% 30%;
 	}
-
 
 	#main-nav li {
 		padding: 1rem;
@@ -646,7 +674,7 @@ img {
 	}
 
 	#about-a .about-info {
-		grid-template-areas: "bioimage""bio""aw1""aw2""aw3";
+		grid-template-areas: "bioimage" "bio" "aw1" "aw2" "aw3";
 	}
 
 	#about-c {
@@ -654,7 +682,7 @@ img {
 	}
 
 	#contact-a .text-fields {
-		grid-template-areas: "name""subject""email""phone""message";
+		grid-template-areas: "name" "subject" "email" "phone" "message";
 	}
 
 	#contact-b div {
@@ -673,7 +701,6 @@ img {
 		grid-template-columns: 1fr;
 	}
 
-
 	#contact-c h1 {
 		font-size: 2rem;
 	}
@@ -688,8 +715,6 @@ img {
 		padding: 1rem;
 		height: 6rem;
 	}
-
-
 }
 
 /* Extra Small */
@@ -711,8 +736,6 @@ img {
 		font-size: 1.25rem;
 	}
 }
-
-
 
 /* Mouse */
 @media (max-width: 350px) {

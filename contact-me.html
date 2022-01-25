@@ -67,52 +67,80 @@
 			</div>
 		</header>
 
+		<!-- /*action="javascript:alert( 'success!' );"*/ -->
 		<main>
 			<section id="contact-a" class="text-center py-3">
 				<div class="container my-3">
 					<h2 class="section-title">Contact Me</h2>
 					<div class="bottom-line"></div>
 					<p class="lead">Here is how you can reach me</p>
-					<form method="POST" data-netlify="true" data-netlify-recaptcha="true">
+					<form
+						method="POST"
+						name="contactForm"
+						id=""
+						action=""
+						enctype="multipart/form-data"
+					>
 						<div class="text-fields">
-							<input
-								type="text"
-								class="text-input name-input"
-								placeholder="Name"
-								name="name"
-								required
-							/>
-							<input
-								type="text"
-								class="text-input subject-input"
-								placeholder="Subject"
-								name="subject"
-								required
-							/>
-							<input
-								type="email"
-								class="text-input email-input"
-								placeholder="Email Address"
-								name="email"
-								required
-							/>
-							<input
-								type="text"
-								class="text-input phone-input"
-								placeholder="Phone Number"
-								name="phone"
-								required
-							/>
-							<textarea
-								class="text-input message-input"
-								placeholder="Enter Message"
-								name="message"
-							></textarea>
+							<div class="text-input name-input input-group">
+								<label for="name">Name</label>
+								<input
+									type="text"
+									class="text-input input-field"
+									name="name"
+									id="userName"
+								/>
+								<span id="userName-info" class="info"></span>
+							</div>
+							<div class="text-input email-input input-group">
+								<label for="email">Email</label>
+								<input
+									type="text"
+									class="text-input"
+									name="email"
+									id="userEmail"
+								/>
+								<span id="userEmail-info" class="info"></span>
+							</div>
+							<div class="text-input subject-input input-group">
+								<label for="subject">Subject</label>
+								<input
+									type="text"
+									class="text-input"
+									name="subject"
+									id="userSubject"
+								/>
+								<span id="userSubject-info" class="info"></span>
+							</div>
+							<div class="text-input phone-input input-group">
+								<label for="name">Phone Number</label>
+								<input
+									type="text"
+									class="text-input"
+									name="phone"
+									id="userPhone"
+								/>
+								<span id="userPhone-info" class="info"></span>
+							</div>
+							<div class="text-input message-input input-group">
+								<label for="name">Message</label>
+								<textarea
+									class="text-message"
+									name="message"
+									id="userMessage"
+								></textarea>
+								<span id="userMessage-info" class="info"></span>
+							</div>
 							<div class="my-2">
 								<div data-netlify-recaptcha="true"></div>
 							</div>
 						</div>
-						<button type="submit" class="btn-dark">Submit</button>
+						<div class="submit-group">
+							<div id="alert-boxy" class="alert-box">
+								Form Submitted Successfully!
+							</div>
+							<button type="submit" class="btn-dark mt-3">Submit</button>
+						</div>
 					</form>
 				</div>
 			</section>
@@ -180,10 +208,78 @@
 		</footer>
 
 		<script
-			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
+		<script>
+			$("form").submit(function (e) {
+				e.preventDefault();
+				var valid = true;
+				var userName = $("#userName").val();
+				var userEmail = $("#userEmail").val();
+				var userSubject = $("#userSubject").val();
+				var userPhone = $("#userPhone").val();
+				var userMessage = $("#userMessage").val();
+
+				// Resetting all the things if they have no errors...
+				$(".info").html("");
+				$("input").css("border", "#000 1px solid");
+				$("textarea").css("border", "#000 1px solid");
+
+				if (!userName) {
+					$("#userName-info").text("Required");
+					$("#userName").css("border", "#e66262 1px solid");
+					valid = false;
+				}
+
+				if (!userEmail) {
+					$("#userEmail-info").html("Required");
+					$("#userEmail").css("border", "#e66262 1px solid");
+					valid = false;
+				} else if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+					$("#userEmail-info").html("Invalid Email Address");
+					$("#userEmail").css("border", "#e66262 1px solid");
+					valid = false;
+				}
+
+				if (!userSubject) {
+					$("#userSubject-info").text("Required");
+					$("#userSubject").css("border", "#e66262 1px solid");
+					valid = false;
+				}
+
+				if (!userPhone) {
+					$("#userPhone-info").html("Required");
+					$("#userPhone").css("border", "#e66262 1px solid");
+					valid = false;
+				} else if (
+					!userPhone.match(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/)
+				) {
+					$("#userPhone-info").html("Invalid Phone Number");
+					$("#userEmail").css("border", "#e66262 1px solid");
+					valid = false;
+				}
+
+				if (!userMessage) {
+					$("#userMessage-info").html("Required");
+					$("#userMessage").css("border", "#e66262 1px solid");
+					valid = false;
+				}
+
+				if (valid) {
+					$("#userName").val("");
+					$("#userEmail").val("");
+					$("#userSubject").val("");
+					$("#userPhone").val("");
+					$("#userMessage").val("");
+
+					$("#alert-boxy").css("display", "block").fadeIn(100).fadeOut(3000);
+				}
+
+				return valid;
+			});
+		</script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
 			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
