@@ -77,7 +77,7 @@
 					<form
 						method="POST"
 						name="contactForm"
-						id=""
+						id="contactForm"
 						action=""
 						enctype="multipart/form-data"
 					>
@@ -135,11 +135,18 @@
 								<div data-netlify-recaptcha="true"></div>
 							</div>
 						</div>
+						<div
+							class="g-recaptcha"
+							data-sitekey="<?php echo SITE_KEY; ?>"
+						></div>
 						<div class="submit-group">
 							<div id="alert-boxy" class="alert-box">
 								Form Submitted Successfully!
 							</div>
-							<button type="submit" class="btn-dark mt-3">Submit</button>
+
+							<button type="submit" class="btn-dark mt-3 g-recaptcha">
+								Submit
+							</button>
 						</div>
 					</form>
 				</div>
@@ -212,7 +219,13 @@
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		<script>
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script type="text/javascript">
+			//reCaptcha script...
+			function onSubmit(token) {
+				document.getElementById("contactForm").submit();
+			}
+
 			$("form").submit(function (e) {
 				e.preventDefault();
 				var valid = true;
