@@ -32,7 +32,7 @@
 					class="navbar navbar-expand-lg navbar-dark bg-light px-0"
 					id="main-nav"
 				>
-					<a class="navbar-brand" id="logo" href="home.html"
+					<a class="navbar-brand" id="logo" href="index.html"
 						>Unsubstantiated Script</a
 					>
 					<button
@@ -50,7 +50,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="home.html">Home</a>
+								<a class="nav-link" href="index.html">Home</a>
 							</li>
 							<li class="nav-item active">
 								<a class="nav-link" href="about-me.html">About Me</a>
@@ -137,16 +137,14 @@
 						</div>
 						<div
 							class="g-recaptcha"
-							data-sitekey="<?php echo SITE_KEY; ?>"
+							data-sitekey="6Lf13DUeAAAAAAj40aTca_b9-2y-x0cVI_rab00o"
 						></div>
 						<div class="submit-group">
 							<div id="alert-boxy" class="alert-box">
 								Form Submitted Successfully!
 							</div>
 
-							<button type="submit" class="btn-dark mt-3 g-recaptcha">
-								Submit
-							</button>
+							<button type="submit" class="btn-dark mt-3">Submit</button>
 						</div>
 					</form>
 				</div>
@@ -219,80 +217,7 @@
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		<script src="https://www.google.com/recaptcha/api.js"></script>
-		<script type="text/javascript">
-			//reCaptcha script...
-			function onSubmit(token) {
-				document.getElementById("contactForm").submit();
-			}
 
-			$("form").submit(function (e) {
-				e.preventDefault();
-				var valid = true;
-				var userName = $("#userName").val();
-				var userEmail = $("#userEmail").val();
-				var userSubject = $("#userSubject").val();
-				var userPhone = $("#userPhone").val();
-				var userMessage = $("#userMessage").val();
-
-				// Resetting all the things if they have no errors...
-				$(".info").html("");
-				$("input").css("border", "#000 1px solid");
-				$("textarea").css("border", "#000 1px solid");
-
-				if (!userName) {
-					$("#userName-info").text("Required");
-					$("#userName").css("border", "#e66262 1px solid");
-					valid = false;
-				}
-
-				if (!userEmail) {
-					$("#userEmail-info").html("Required");
-					$("#userEmail").css("border", "#e66262 1px solid");
-					valid = false;
-				} else if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
-					$("#userEmail-info").html("Invalid Email Address");
-					$("#userEmail").css("border", "#e66262 1px solid");
-					valid = false;
-				}
-
-				if (!userSubject) {
-					$("#userSubject-info").text("Required");
-					$("#userSubject").css("border", "#e66262 1px solid");
-					valid = false;
-				}
-
-				if (!userPhone) {
-					$("#userPhone-info").html("Required");
-					$("#userPhone").css("border", "#e66262 1px solid");
-					valid = false;
-				} else if (
-					!userPhone.match(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/)
-				) {
-					$("#userPhone-info").html("Invalid Phone Number");
-					$("#userEmail").css("border", "#e66262 1px solid");
-					valid = false;
-				}
-
-				if (!userMessage) {
-					$("#userMessage-info").html("Required");
-					$("#userMessage").css("border", "#e66262 1px solid");
-					valid = false;
-				}
-
-				if (valid) {
-					$("#userName").val("");
-					$("#userEmail").val("");
-					$("#userSubject").val("");
-					$("#userPhone").val("");
-					$("#userMessage").val("");
-
-					$("#alert-boxy").css("display", "block").fadeIn(100).fadeOut(3000);
-				}
-
-				return valid;
-			});
-		</script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
 			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -303,5 +228,7 @@
 			integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
 			crossorigin="anonymous"
 		></script>
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script src="js/formHandler.js"></script>
 	</body>
 </html>
