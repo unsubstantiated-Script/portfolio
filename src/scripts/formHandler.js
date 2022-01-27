@@ -14,8 +14,11 @@ $("form").submit(function (e) {
 function runValidation() {
 	let valid = true;
 	let siteKey = $("#site-key").data("set");
+
+	//Not sure if this is needed, but keeping it here just in case
 	let secretKey = $("#secret-key").data("set");
 
+	//Using some JQuery as it shortcuts a lot of Vanilla JS test, plus, the best way to learn something is to build with it!
 	grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
 		const userName = $("#userName").val();
 		const userEmail = $("#userEmail").val();
@@ -23,12 +26,14 @@ function runValidation() {
 		const userPhone = $("#userPhone").val();
 		const userMessage = $("#userMessage").val();
 
+		// Checking input
 		if (!userName) {
 			$("#userName-info").text("Required");
 			$("#userName").css("border", "#e66262 1px solid");
 			valid = false;
 		}
 
+		//Checking input and validity
 		if (!userEmail) {
 			$("#userEmail-info").html("Required");
 			$("#userEmail").css("border", "#e66262 1px solid");
@@ -63,14 +68,7 @@ function runValidation() {
 			valid = false;
 		}
 
-		if (valid) {
-			$("#userName").val("");
-			$("#userEmail").val("");
-			$("#userSubject").val("");
-			$("#userPhone").val("");
-			$("#userMessage").val("");
-		}
-
+		//Need to stop the propigation of the email service here still....rrggg...
 		if (valid) {
 			sendData(userName, userEmail, userSubject, userPhone, userMessage, token);
 		}
@@ -113,12 +111,11 @@ async function sendData(
 					.css({ display: "block", "background-color": "#F8D7DA" })
 					.text(data.msg)
 					.fadeIn(100)
-					.fadeOut(3000);
+					.fadeOut(2000);
+			} else {
+				post2Email(userName, userEmail, userSubject, userPhone, userMessage);
 			}
-			$("#alert-boxy")
-				.css({ display: "block", "background-color": "#d4edda" })
-				.text(data.msg)
-				.fadeIn(100)
-				.fadeOut(3000);
 		});
 }
+
+// function postMail(userName, userEmail, userSubject, userPhone, userMessage) {}

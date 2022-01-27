@@ -4,6 +4,8 @@ const request = require("request");
 const chalk = require("chalk");
 const debug = require("debug")("app");
 const morgan = require("morgan");
+const nodemailer = require("nodemailer");
+
 require("dotenv").config();
 const secretKey = process.env.SECRET_KEY;
 
@@ -60,6 +62,7 @@ app.get("/contact-me", (req, res) => {
 });
 
 app.post("/verify", (req, res) => {
+	//Verify post call for the contact-form
 	if (!req.body.captcha) {
 		res.json({ msg: "captcha token is undefined" });
 	}
@@ -80,12 +83,53 @@ app.post("/verify", (req, res) => {
 		}
 
 		return res.json({
-			msg: "Message Sent. Thank You!",
 			success: body.success,
 			score: body.score,
 		});
 	});
 });
+
+// Once verify is done, need to run a new request "/postEmail"
+app.post("/postEmail", (req, res) => {
+	//console.log(req.body);
+
+	//If gmail...
+	const transporter = nodemailer.createTransport({
+		service: "gmail",
+		auth: {
+			user: process.env.EMAIL,
+			pass: process.env.EMAIL_PASSWORD,
+		},
+	});
+
+	// //Other email services
+	// const transporter = nodemailer.createTransport({
+	// 	host: "WEBHOST_GOES_HERE",
+	// 	port: "PORT_NUMBER_GOES_HERE",
+	// 	auth: {
+	// 		user: USER,
+	// 		pass: PASSWORD,
+	// 	},
+	// });
+
+	const mailOptions = {
+		from: req.body.userEmail,
+		to: process.env.EMAIL,
+		subject: `Subject:${req.body.userSubject}, From: ${req.body.userEmail}`,
+		text: `Message: ${req.body.userMessage}\r\rContact Phone: ${req.body.userPhone}`,
+	};
+
+	transporter.sendMail(mailOptions, (error, info) => {
+		if (error) {
+			console.log(error);
+			res.send("error");
+		} else {
+			console.log(`Email sent: ${info.response}`);
+			res.send("success");
+		}
+	});
+});
+
 app.get("/portfolio", (req, res) => {
 	res.render("portfolio", { title: "Portfolio" });
 });
