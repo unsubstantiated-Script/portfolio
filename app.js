@@ -5,14 +5,19 @@ const chalk = require("chalk");
 const debug = require("debug")("app");
 const morgan = require("morgan");
 const nodemailer = require("nodemailer");
+const compression = require("compression");
+const helmet = require("helmet");
 
 require("dotenv").config();
 const secretKey = process.env.SECRET_KEY;
 
 const app = express();
+app.use(helmet());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(compression());
 
 const port = process.env.PORT || 3000;
 const path = require("path");
@@ -70,7 +75,7 @@ app.post("/verify", (req, res) => {
 
 	request(verifyUrl, (err, response, body) => {
 		if (err) {
-			console.log(err);
+			debug("verification error:" + err);
 		}
 		body = JSON.parse(body);
 
@@ -121,10 +126,10 @@ app.post("/postEmail", (req, res) => {
 
 	transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
-			console.log(error);
+			debug("transporter error:" + error);
 			res.send("error");
 		} else {
-			console.log(`Email sent: ${info.response}`);
+			debug(`Email sent: ${info.response}`);
 			res.send("success");
 		}
 	});
