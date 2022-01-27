@@ -8,7 +8,6 @@ function post2Email(userName, userEmail, userSubject, userPhone, userMessage) {
 	xhr.open("POST", "/postEmail");
 	xhr.setRequestHeader("content-type", "application/json");
 	xhr.onload = function () {
-		console.log(xhr.responseText);
 		let response = xhr.responseText;
 		if (response === "success") {
 			//Clearing fields here might wanna move back to main thing...
