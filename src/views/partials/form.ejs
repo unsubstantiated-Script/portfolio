@@ -1,0 +1,48 @@
+<form
+	method="POST"
+	name="contactForm"
+	id="contactForm"
+	action=""
+	enctype="multipart/form-data"
+>
+	<div class="text-fields">
+		<div class="text-input name-input input-group">
+			<label for="name">Name</label>
+			<input
+				type="text"
+				class="text-input input-field"
+				name="name"
+				id="userName"
+			/>
+			<span id="userName-info" class="info"></span>
+		</div>
+		<div class="text-input email-input input-group">
+			<label for="email">Email</label>
+			<input type="text" class="text-input" name="email" id="userEmail" />
+			<span id="userEmail-info" class="info"></span>
+		</div>
+		<div class="text-input subject-input input-group">
+			<label for="subject">Subject</label>
+			<input type="text" class="text-input" name="subject" id="userSubject" />
+			<span id="userSubject-info" class="info"></span>
+		</div>
+		<div class="text-input phone-input input-group">
+			<label for="name">Phone Number</label>
+			<input type="text" class="text-input" name="phone" id="userPhone" />
+			<span id="userPhone-info" class="info"></span>
+		</div>
+		<div class="text-input message-input input-group mb-5">
+			<label for="name">Message</label>
+			<textarea class="text-message" name="message" id="userMessage"></textarea>
+			<span id="userMessage-info" class="info"></span>
+		</div>
+	</div>
+
+	<div class="submit-group">
+		<div id="alert-boxy" class="alert-box"></div>
+		<button type="submit" class="btn-dark mt-3">Submit</button>
+	</div>
+</form>
+<!-- Passing the server data through the html to the client JS -->
+<div id="site-key" data-set="<%=siteKey %>"></div>
+<div id="secret-key" data-set="<%=secretKey %>"></div>

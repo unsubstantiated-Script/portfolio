@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 /* Globals */
 .btn-main,
 .btn-light,
@@ -259,8 +260,8 @@ img {
 }
 
 #header-home {
-	background: url("https://source.unsplash.com/sp-p7uuT0tw/2560x1440") no-repeat
-		center right/cover;
+	background: url("../img/forestBackground.jpg") no-repeat center right/cover
+		fixed;
 	height: 100vh;
 	color: #fff;
 }
@@ -471,11 +472,9 @@ img {
 
 #contact-a .alert-box {
 	position: absolute;
-	top: -45px;
-	background-color: #d4edda;
+	top: -50px;
 	font-size: 24px;
 	padding: 5px 25px;
-	display: none;
 }
 
 #contact-a .text-fields .name-input {
