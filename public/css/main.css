@@ -225,12 +225,12 @@ img {
 
 /* Global Components */
 
-#main-nav {
-	padding-top: 10px;
-}
+/* #main-nav {
+	 padding-top: 5px; 
+} */
 
 #main-nav li {
-	padding: 1rem 1.5rem;
+	padding: 0.5rem 1.5rem;
 }
 
 #main-nav a {
