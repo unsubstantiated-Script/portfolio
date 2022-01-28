@@ -12,7 +12,11 @@ require("dotenv").config();
 const secretKey = process.env.SECRET_KEY;
 
 const app = express();
-app.use(helmet());
+app.use(
+	helmet({
+		contentSecurityPolicy: false,
+	}),
+);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -126,7 +130,7 @@ app.post("/postEmail", (req, res) => {
 
 	transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
-			debug("transporter error:" + error);
+			console.log("transporter error:" + error);
 			res.send("error");
 		} else {
 			debug(`Email sent: ${info.response}`);
