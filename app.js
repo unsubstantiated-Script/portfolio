@@ -6,17 +6,11 @@ const debug = require("debug")("app");
 const morgan = require("morgan");
 const nodemailer = require("nodemailer");
 const compression = require("compression");
-const helmet = require("helmet");
 
 require("dotenv").config();
 const secretKey = process.env.SECRET_KEY;
 
 const app = express();
-app.use(
-	helmet({
-		contentSecurityPolicy: false,
-	}),
-);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
