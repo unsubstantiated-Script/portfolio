@@ -124,7 +124,7 @@ app.post("/postEmail", (req, res) => {
 		to: req.body.userEmail,
 		bcc: process.env.EMAIL,
 		subject: `From: ${req.body.userEmail}, Subject:${req.body.userSubject}`,
-		text: `Message: ${req.body.userMessage}\r\rContact Phone: ${req.body.userPhone}`,
+		text: `Name: ${req.body.userName}\r\rMessage: ${req.body.userMessage}\r\rContact Phone: ${req.body.userPhone}`,
 	};
 
 	transporter.sendMail(mailOptions, (error, info) => {
