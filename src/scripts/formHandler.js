@@ -21,7 +21,7 @@ function runValidation() {
 	//Using some JQuery as it shortcuts a lot of Vanilla JS test, plus, the best way to learn something is to build with it!
 	grecaptcha.execute(siteKey, { action: "submit" }).then(function (token) {
 		const userName = $("#userName").val();
-		const userEmail = $("#userEmail").val();
+		const userEmail = $("#userEmail").val().trim();
 		const userSubject = $("#userSubject").val();
 		const userPhone = $("#userPhone").val();
 		const userMessage = $("#userMessage").val();

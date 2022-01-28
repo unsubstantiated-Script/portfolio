@@ -96,29 +96,34 @@ app.post("/verify", (req, res) => {
 app.post("/postEmail", (req, res) => {
 	//console.log(req.body);
 
-	//If gmail...
-	const transporter = nodemailer.createTransport({
-		service: "gmail",
-		auth: {
-			user: process.env.EMAIL,
-			pass: process.env.EMAIL_PASSWORD,
-		},
-	});
-
-	//Other email services
+	// //If gmail...
 	// const transporter = nodemailer.createTransport({
-	// 	host: process.env.WEBHOST,
-	// 	port: process.env.PORT,
+	// 	service: "gmail",
 	// 	auth: {
 	// 		user: process.env.EMAIL,
 	// 		pass: process.env.EMAIL_PASSWORD,
 	// 	},
 	// });
 
+	//Other email services
+	const transporter = nodemailer.createTransport({
+		host: process.env.WEBHOST,
+		port: process.env.MAIL_PORT,
+		requireTLS: true, //Force TLS
+		tls: {
+			rejectUnauthorized: false,
+		},
+		auth: {
+			user: process.env.EMAIL,
+			pass: process.env.EMAIL_PASSWORD,
+		},
+	});
+
 	const mailOptions = {
-		from: req.body.userEmail,
-		to: process.env.EMAIL,
-		subject: `Subject:${req.body.userSubject}, From: ${req.body.userEmail}`,
+		from: process.env.EMAIL,
+		to: req.body.userEmail,
+		bcc: process.env.EMAIL,
+		subject: `From: ${req.body.userEmail}, Subject:${req.body.userSubject}`,
 		text: `Message: ${req.body.userMessage}\r\rContact Phone: ${req.body.userPhone}`,
 	};
 
