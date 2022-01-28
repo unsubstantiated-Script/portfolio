@@ -6,13 +6,11 @@ const debug = require("debug")("app");
 const morgan = require("morgan");
 const nodemailer = require("nodemailer");
 const compression = require("compression");
-const helmet = require("helmet");
 
 require("dotenv").config();
 const secretKey = process.env.SECRET_KEY;
 
 const app = express();
-app.use(helmet());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -99,23 +97,23 @@ app.post("/postEmail", (req, res) => {
 	//console.log(req.body);
 
 	//If gmail...
+	// const transporter = nodemailer.createTransport({
+	// 	service: "gmail",
+	// 	auth: {
+	// 		user: process.env.EMAIL,
+	// 		pass: process.env.EMAIL_PASSWORD,
+	// 	},
+	// });
+
+	//Other email services
 	const transporter = nodemailer.createTransport({
-		service: "gmail",
+		host: process.env.WEBHOST,
+		port: process.env.PORT,
 		auth: {
 			user: process.env.EMAIL,
 			pass: process.env.EMAIL_PASSWORD,
 		},
 	});
-
-	// //Other email services
-	// const transporter = nodemailer.createTransport({
-	// 	host: "WEBHOST_GOES_HERE",
-	// 	port: "PORT_NUMBER_GOES_HERE",
-	// 	auth: {
-	// 		user: USER,
-	// 		pass: PASSWORD,
-	// 	},
-	// });
 
 	const mailOptions = {
 		from: req.body.userEmail,
@@ -126,7 +124,7 @@ app.post("/postEmail", (req, res) => {
 
 	transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
-			debug("transporter error:" + error);
+			console.log("transporter error:" + error);
 			res.send("error");
 		} else {
 			debug(`Email sent: ${info.response}`);
