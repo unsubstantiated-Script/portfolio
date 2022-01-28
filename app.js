@@ -11,6 +11,11 @@ require("dotenv").config();
 const secretKey = process.env.SECRET_KEY;
 
 const app = express();
+app.use(
+	helmet({
+		contentSecurityPolicy: false,
+	}),
+);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
