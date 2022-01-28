@@ -226,7 +226,7 @@ img {
 /* Global Components */
 
 #main-nav {
-	padding-top: 1rem;
+	padding-top: 0.5rem;
 }
 
 #main-nav li {
@@ -539,13 +539,13 @@ img {
 #main-footer {
 	background: #1c6c8c;
 	color: #fff;
-	height: 5.5rem;
+	height: 7rem;
 }
 
 #main-footer .footer-content {
 	display: flex;
 	justify-content: space-between;
-	height: 5.5rem;
+	height: 7rem;
 	align-items: center;
 }
 
@@ -580,6 +580,10 @@ img {
 
 	#header-home {
 		height: 50vh;
+	}
+
+	#main-nav {
+		padding-top: 1rem;
 	}
 
 	#main-nav a {
