@@ -226,7 +226,7 @@ img {
 /* Global Components */
 
 #main-nav {
-	padding-top: 0.5rem;
+	padding-top: 10px;
 }
 
 #main-nav li {
