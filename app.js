@@ -6,6 +6,7 @@ const debug = require("debug")("app");
 const morgan = require("morgan");
 const nodemailer = require("nodemailer");
 const compression = require("compression");
+const helmet = require("helmet");
 
 require("dotenv").config();
 const secretKey = process.env.SECRET_KEY;
