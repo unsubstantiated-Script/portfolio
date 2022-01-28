@@ -103,23 +103,23 @@ app.post("/postEmail", (req, res) => {
 	//console.log(req.body);
 
 	//If gmail...
-	// const transporter = nodemailer.createTransport({
-	// 	service: "gmail",
-	// 	auth: {
-	// 		user: process.env.EMAIL,
-	// 		pass: process.env.EMAIL_PASSWORD,
-	// 	},
-	// });
-
-	//Other email services
 	const transporter = nodemailer.createTransport({
-		host: process.env.WEBHOST,
-		port: process.env.PORT,
+		service: "gmail",
 		auth: {
 			user: process.env.EMAIL,
 			pass: process.env.EMAIL_PASSWORD,
 		},
 	});
+
+	//Other email services
+	// const transporter = nodemailer.createTransport({
+	// 	host: process.env.WEBHOST,
+	// 	port: process.env.PORT,
+	// 	auth: {
+	// 		user: process.env.EMAIL,
+	// 		pass: process.env.EMAIL_PASSWORD,
+	// 	},
+	// });
 
 	const mailOptions = {
 		from: req.body.userEmail,
