@@ -364,23 +364,32 @@ img {
 	padding: 0.8rem;
 }
 
-#about-a .award-1 .fas,
-#about-a .award-2 .fas,
-#about-a .award-3 .fas {
-	color: #1c6c8c;
-	padding: 5px;
-	margin: 1rem;
+#about-b {
+	background-color: #1c6c8c;
 }
 
-#about-a .award-1 .fas:hover,
-#about-a .award-2 .fas:hover,
-#about-a .award-3 .fas:hover {
-	color: #f2e2c4;
-	background-color: #1c6c8c;
+#about-b h3,
+#about-b p {
+	color: #fff;
+}
+
+#about-b .award-1 .fas,
+#about-b .award-2 .fas,
+#about-b .award-3 .fas {
+	color: #f2790f;
+	margin: 1rem;
+	padding: 20px;
+}
+
+#about-b .award-1 .fas:hover,
+#about-b .award-2 .fas:hover,
+#about-b .award-3 .fas:hover {
+	color: #fff;
+	background-color: #f2790f;
 	border-radius: 2px;
 }
 
-#about-b .skill-set {
+/* #about-b .skill-set {
 	color: white;
 }
 
@@ -401,9 +410,44 @@ img {
 	color: #fff;
 	text-align: center;
 	background: #d92b04;
+} */
+
+#about-c .testimonials ul {
+	list-style: none;
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
 }
 
-#about-c .about-logos {
+#about-c .testimonials p {
+	border: 1px solid #f2790f;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 0.5rem;
+	color: #fff;
+}
+
+#about-c .testimonials .reference-letter {
+	color: #1c6c8c;
+}
+
+#about-c .testimonials .reference-letter:hover {
+	color: white;
+	background-color: #f2790f;
+}
+
+#about-c .testimonials a {
+	color: inherit;
+}
+
+#about-c .testimonials img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 0.5rem;
+}
+
+/* #about-c .about-logos {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 2rem;
@@ -411,40 +455,7 @@ img {
 
 #about-c .about-logos img {
 	width: 70%;
-}
-
-#about-d .testimonials ul {
-	list-style: none;
-	margin-top: 1rem;
-	display: flex;
-	align-items: center;
-}
-
-#about-d .testimonials p {
-	border: 1px solid #f2790f;
-	border-radius: 5px;
-	padding: 0.5rem;
-}
-
-#about-d .testimonials .reference-letter {
-	color: #1c6c8c;
-}
-
-#about-d .testimonials .reference-letter:hover {
-	color: white;
-	background-color: #f2790f;
-}
-
-#about-d .testimonials a {
-	color: inherit;
-}
-
-#about-d .testimonials img {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	margin-right: 0.5rem;
-}
+} */
 
 #contact-a .text-fields {
 	display: grid;
