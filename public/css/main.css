@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 /* Globals */
 .btn-main,
 .btn-light,
@@ -67,11 +68,10 @@ input[class^="btn-"]:hover {
 }
 
 .section-title {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	display: block;
 	padding-bottom: 0.5rem;
 	text-align: center;
-	font-weight: 100;
 	text-transform: uppercase;
 }
 
@@ -206,7 +206,7 @@ input[class^="btn-"]:hover {
 }
 
 body {
-	font-family: "Dosis", sans-serif;
+	font-family: "Raleway", sans-serif;
 	line-height: 1.6;
 	background: #fff;
 }
@@ -222,6 +222,10 @@ a.link-button {
 
 ul {
 	list-style: none;
+}
+
+.about-item {
+	list-style: disc;
 }
 
 h2,
@@ -252,6 +256,8 @@ img {
 #main-nav a {
 	text-decoration: none;
 	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
 	text-transform: uppercase;
 	border-bottom: 3px transparent solid;
 	padding-bottom: 0.5rem;
@@ -566,15 +572,18 @@ img {
 #main-footer {
 	background: #1c6c8c;
 	color: #fff;
-	height: 7rem;
+	width: 100%;
+	position: relative;
+	bottom: 0;
+	/* height: 7rem; */
 }
 
-#main-footer .footer-content {
+/* #main-footer .footer-content {
 	display: flex;
 	justify-content: space-between;
 	height: 7rem;
 	align-items: center;
-}
+} */
 
 #main-footer .footer-content .social .fab {
 	margin: 1rem;
@@ -732,15 +741,14 @@ img {
 	}
 
 	#main-footer {
-		height: 220px;
 		text-align: center;
 	}
 
-	#main-footer .footer-content {
+	/* #main-footer .footer-content {
 		flex-direction: column;
 		padding: 1rem;
 		height: 6rem;
-	}
+	} */
 }
 
 /* Extra Small */

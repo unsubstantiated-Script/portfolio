@@ -1,190 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<%- include('./partials/head') %>
-	</head>
 
-	<body>
-		<header id="header-home">
-			<div class="overlay"></div>
+<head>
+	<%- include('./partials/head') %>
+</head>
+
+<body>
+	<header id="header-home">
+		<div class="overlay"></div>
+		<div class="container">
+			<!-- I chose to avoid the navbar toggler due to the chaos it was causing with my design. I need to do an overlay in the future. -->
+			<%- include('./partials/nav-bar') %>
+			<section class="header-content">
+				<h1>Hey there! I'm Justin</h1>
+				<blockquote class="lead">
+					I'm the kinda person that likes to
+					<span class="txt-type" data-wait="3000"
+						data-words='[ "collaborate.", "design.","grow.", "adapt.", "develop.", "test.", "learn.", "lend a hand."]'></span>
+				</blockquote>
+				<a href="/portfolio" class="btn-light link-button">View My Work</a>
+			</section>
+		</div>
+	</header>
+
+	<main>
+		<!-- Section A: Specialties -->
+		<section id="home-a" class="text-center pt-4 my-4">
 			<div class="container">
-				<!-- I chose to avoid the navbar toggler due to the chaos it was causing with my design. I need to do an overlay in the future. -->
-				<%- include('./partials/nav-bar') %>
-				<section class="header-content">
-					<h1>Hey there! I'm Justin</h1>
-					<blockquote class="lead">
-						Quality comes from the ability to
-						<span
-							class="txt-type"
-							data-wait="3000"
-							data-words='[ "collaborate.", "design.","grow.", "change.", "develop.", "test.", "learn.", "relate."]'
-						></span>
-					</blockquote>
-					<a href="/portfolio" class="btn-light link-button">View My Work</a>
-				</section>
-			</div>
-		</header>
-
-		<main>
-			<!-- Section A: Specialties -->
-			<section id="home-a" class="text-center pt-4 my-4">
-				<div class="container">
-					<h2 class="section-title">My Ever Growing Competencies</h2>
-					<div class="bottom-line"></div>
-					<!-- Saving this for later or might remove -->
-					<!-- <p class="lead">
+				<h2 class="section-title">My Expanding Competencies</h2>
+				<div class="bottom-line"></div>
+				<!-- Saving this for later or might remove -->
+				<!-- <p class="lead">
 					Photography and Graphic Design as well as creating mobile first full
 					stack web applications.
 				</p> -->
-					<div class="specials row">
-						<div class="col-12 col-md-6 col-lg mt-3">
-							<i class="fas fa-marker fa-2x"></i>
-							<h3 class="my-2">UI/UX</h3>
-							<p>
-								Projects begin with media created or refined in Illustrator or
-								Photoshop. Wireframes and High Quality Mockups developed in Xd.
-							</p>
-						</div>
-						<div class="col-12 col-md-6 col-lg mt-3">
-							<i class="fas fa-object-ungroup fa-2x"></i>
-							<h3 class="my-2">Visual Design</h3>
-							<p>
-								The front end comes to life with Javascript or a speedy modern
-								framework. CSS, Bootstrap, Sass, Tailwind, or Materialize create
-								responsive designs.
-							</p>
-						</div>
-						<div class="col-12 col-md-6 col-lg mt-3">
-							<i class="fas fa-bolt fa-2x"></i>
-							<h3 class="my-2">Modern Web in Mind</h3>
-							<p>
-								Search engine optimizations, accessability, single page
-								application, server sided rendering, Gatsby, Next, Nuxt, EJS,
-								Laravel, Livewire Headless, JAMstack... Let's go!
-							</p>
-						</div>
-						<!-- <div class="col-12 col-md-6 col-lg mt-3">
+				<div class="specials row">
+					<div class="col-12 col-md-6 col-lg mt-3">
+						<i class="fas fa-marker fa-2x"></i>
+						<h3 class="my-2">UI/UX</h3>
+						<p>
+							I create media in Illustrator and/or
+							Photoshop. Wireframes and High Quality Mockups are then developed in Xd.
+						</p>
+					</div>
+					<div class="col-12 col-md-6 col-lg mt-3">
+						<i class="fas fa-object-ungroup fa-2x"></i>
+						<h3 class="my-2">Visual Design</h3>
+						<p>
+							I currently develop web projects in Javascript and PHP.
+						</p>
+					</div>
+					<div class="col-12 col-md-6 col-lg mt-3">
+						<i class="fas fa-bolt fa-2x"></i>
+						<h3 class="my-2">Modern Web in Mind</h3>
+						<p>
+							I'm passionate about modern framework solutions for speed, SEO, accessibility, and
+							efficiency.
+						</p>
+					</div>
+					<!-- <div class="col-12 col-md-6 col-lg mt-3">
 							<i class="fas fa fa-clipboard fa-2x"></i>
 							<h3 class="my-2">Testing</h3>
 							<p>Test driven development is done with Jest and Storybook.js.</p>
 						</div> -->
-						<div class="col-12 col-md-6 col-lg mt-3">
-							<i class="fas fa-cloud fa-2x"></i>
-							<h3 class="my-2">Back End</h3>
-							<p>
-								Test Driven backends run seamlessly in Node.js, PHP, Redux,
-								MongoDB, and SQL. Deploying on Azure, Netlify, and Dreamhost via
-								SFTP and SSH CLI commands. AWS cloud cert coming soon.
-							</p>
-						</div>
+					<div class="col-12 col-md-6 col-lg mt-3">
+						<i class="fas fa-cloud fa-2x"></i>
+						<h3 class="my-2">Back End</h3>
+						<p>
+							I like making test driven API's and SSR projects using tools like Node.js, PHP,
+							MongoDB, and SQL. I've deployed on Azure, Netlify, and Dreamhost via SFTP and SSH.
+						</p>
+					</div>
 
-						<div class="col-12 col-md-6 col-lg mt-3">
-							<i class="fas fa-mobile-alt fa-2x"></i>
-							<h3 class="my-2">Mobile</h3>
-							<p>
-								Lightweight Mobile Apps are created for Android with Kotlin or
-								non-natively with React Native.
-							</p>
-						</div>
+					<div class="col-12 col-md-6 col-lg mt-3">
+						<i class="fas fa-mobile-alt fa-2x"></i>
+						<h3 class="my-2">Mobile</h3>
+						<p>
+							For its speed and syntax, I enjoy developing Android projects in Kotlin.
+						</p>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Section B: Stats -->
-			<section id="home-b" class="text-center py-2">
-				<div class="container-fluid mb-3">
-					<div class="stats row">
-						<!-- <div class="col-12 col-md-3">
+		<!-- Section B: Stats -->
+		<section id="home-b" class="text-center py-2">
+			<div class="container-fluid mb-3">
+				<div class="stats row">
+					<!-- <div class="col-12 col-md-3">
 							<ul>
 								<li><i class="fas fa-users fa-3x"></i></li>
 								<li class="stats-title">Clients</li>
 								<li class="stats-number">4</li>
 							</ul>
 						</div> -->
-						<div class="col-12 col-md-4">
-							<ul>
-								<li><i class="fas fa fa-code fa-3x"></i></li>
-								<li class="stats-title">Technologies</li>
-								<li class="stats-number">15+</li>
-							</ul>
-						</div>
-						<div class="col-12 col-md-4">
-							<ul>
-								<li><i class="fas fa-hourglass-start fa-3x"></i></li>
-								<li class="stats-title">Years Developing</li>
-								<li class="stats-number">3.5</li>
-							</ul>
-						</div>
-						<div class="col-12 col-md-4">
-							<ul>
-								<li><i class="fas fa-code-branch fa-3x"></i></li>
-								<li class="stats-title">GitHub Projects Completed</li>
-								<li class="stats-number">112</li>
-							</ul>
-						</div>
+					<div class="col-12 col-md-4">
+						<ul>
+							<li><i class="fas fa fa-code fa-3x"></i></li>
+							<li class="stats-title">Technologies</li>
+							<li class="stats-number">15+</li>
+						</ul>
+					</div>
+					<div class="col-12 col-md-4">
+						<ul>
+							<li><i class="fas fa-hourglass-start fa-3x"></i></li>
+							<li class="stats-title">Years Developing</li>
+							<li class="stats-number">3.5</li>
+						</ul>
+					</div>
+					<div class="col-12 col-md-4">
+						<ul>
+							<li><i class="fas fa-code-branch fa-3x"></i></li>
+							<li class="stats-title">GitHub Projects Completed</li>
+							<li class="stats-number">112</li>
+						</ul>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- Section C: Process -->
-			<section id="home-c" class="text-center py-2 my-4">
-				<div class="container">
-					<h2 class="section-title">My Creative Process</h2>
-					<div class="bottom-line"></div>
-					<p class="lead">
-						All of my UI/UX and design projects are based off of a practiced
-						formula to get the result that I am looking for
-					</p>
-					<div class="process row">
-						<div class="col-12 col-md-6 col-lg-3">
-							<i class="fas fa-file-alt fa-4x process-icon my-2">
-								<div class="process-step">1</div>
-							</i>
-							<h3 class="my-2">Discuss The Project</h3>
-							<p>
-								The client's priorities are #1. The initial discussion
-								facilitates key requests and streamlines those into a workable
-								project that is efficient and deadline conscious.
-							</p>
-						</div>
-						<div class="col-12 col-md-6 col-lg-3">
-							<i class="fas fa-object-ungroup fa-4x process-icon my-2">
-								<div class="process-step">2</div>
-							</i>
-							<h3 class="my-2">UI/UX Planning</h3>
-							<p>
-								The methodic process continues here where Xd is utilized to
-								draft up interactive wire frames. Then, they're reviewed and
-								refined into high quality mockups.
-							</p>
-						</div>
-						<div class="col-12 col-md-6 col-lg-3">
-							<i class="fas fa-desktop fa-4x process-icon my-2">
-								<div class="process-step">3</div>
-							</i>
-							<h3 class="my-2">Brainstorming The Concept</h3>
-							<p>
-								The true eureka moments where dreams start coming to life in
-								interactive proof of concepts, mockups, and storybooks. The
-								process is carefully documented.
-							</p>
-						</div>
+		<!-- Section C: Process -->
+		<section id="home-c" class="text-center py-2 my-4">
+			<div class="container">
+				<h2 class="section-title">My Development Process</h2>
+				<div class="bottom-line mb-4"></div>
 
-						<div class="col-12 col-md-6 col-lg-3">
-							<i class="fas fa-thumbs-up fa-4x process-icon my-2">
-								<div class="process-step">4</div>
-							</i>
-							<h3 class="my-2">Interaction</h3>
-							<p>
-								The final product is developed, tested, and finally deployed
-								after the customer is fully satisfied.
-							</p>
-						</div>
+				<div class="process row">
+					<div class="col-12 col-md-6 col-lg-3">
+						<i class="fas fa-file-alt fa-4x process-icon my-2">
+							<div class="process-step">1</div>
+						</i>
+						<h3 class="my-2">Discuss and Plan</h3>
+						<p>
+							Initial discussions highlight key requests and streamlines those into a workable
+							project that is efficient and deadline conscious.
+						</p>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<i class="fas fa-object-ungroup fa-4x process-icon my-2">
+							<div class="process-step">2</div>
+						</i>
+						<h3 class="my-2">UI/UX Mock Ups</h3>
+						<p>
+							Xd is utilized to draft up interactive wire frames. Then the project is reviewed and
+							refined into high quality mockups with documentation explaining key functionality.
+						</p>
+					</div>
+					<div class="col-12 col-md-6 col-lg-3">
+						<i class="fas fa-desktop fa-4x process-icon my-2">
+							<div class="process-step">3</div>
+						</i>
+						<h3 class="my-2">Development</h3>
+						<p>
+							Projects are tested as they're developed to guarantee the desired end result.
+						</p>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-3">
+						<i class="fas fa-thumbs-up fa-4x process-icon my-2">
+							<div class="process-step">4</div>
+						</i>
+						<h3 class="my-2">Deployment</h3>
+						<p>
+							The final product is reviewed for efficiency and deployed via the most cost effective
+							method.
+						</p>
 					</div>
 				</div>
-			</section>
-		</main>
-		<%- include('./partials/footer') %>
-		<script src="/java-script/typewriter.js"></script>
-	</body>
+			</div>
+		</section>
+	</main>
+	<%- include('./partials/footer') %>
+	<script src="/java-script/typewriter.js"></script>
+</body>
+
 </html>
