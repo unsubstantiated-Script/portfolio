@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<%- include('./partials/head') %>
-	</head>
 
-	<body>
-		<!-- Header -->
-		<header id="header-inner" class="sub-head">
-			<div class="container"><%- include('./partials/nav-bar') %></div>
-		</header>
+<head>
+	<%- include('./partials/head') %>
+</head>
 
-		<main>
-			<!-- Section A: Info -->
-			<section id="about-a" class="text-center py-3 container">
-				<section class="py-3">
-					<p class="lead">
-						Let me tell you a little about myself and what I do...
-					</p>
-				</section>
+<body>
+	<!-- Header -->
+	<header id="header-inner" class="sub-head">
+		<div class="container"><%- include('./partials/nav-bar') %></div>
+	</header>
 
-				<section class="about-info row">
-					<div class="col-12 col-lg-4 my-lg-auto mb-4">
-						<img src="img/about.jpg" alt="Bio Image" class="bio-image" />
-					</div>
-					<div class="col-12 col-lg-8">
-						<article class="bio bg-light">
-							<h4>2018-Current: Freelance Web and Mobile App Developer</h4>
-							<p>
-								Developer
-								<br />
-								Creating content in Adobe Creative Cloud HTML5, CSS3, SASS,
-								Materialize, Bootstrap, JavaScript, JSX, React, Node.js, PHP,
-								and Kotlin
-							</p>
-							<br />
-							<h4>June 2021 - Sept 2021: World Wide Group Internship</h4>
-							<p>
-								Tech Writer and Developer
-								<br />
-								Documentation, modular components testing and development,
-								Javascript search, sort, and filter functionality. App now
-								serves over 15,000 customers.
-							</p>
-							<br />
-							<h4>2013-2020: United Arab Emirates University and IELTS</h4>
-							<p>
-								English as a Second Language Administrator, Curriculum design
-								specialist, and Professional Examination Interviewer
-								<br />
-								Curriculum design, software training, Wordpress site
-								development, iBook and other digital textbook creation, graphics
-								design and professional written examinations and speech
-								interviews.
-							</p>
-
-							<a
-								href="https://drive.google.com/file/d/1uBpkABlWToaPmbUY5OjQSnrygtckUjO3/view?usp=sharing"
-								class="btn-light my-3 link-button"
-								target="_blank"
-							>
-								View My Full Resume
-							</a>
-						</article>
-					</div>
-				</section>
+	<main>
+		<!-- Section A: Info -->
+		<section id="about-a" class="text-center py-3 container">
+			<section class="py-3">
+				<p class="lead">
+					Let me tell you a little about myself and what I do...
+				</p>
 			</section>
-			<section id="about-b" class="my-5 text-center awards py-4">
-				<div class="container">
-					<p class="lead text-center mb-0">Degrees and Programs of Study...</p>
-					<section class="row">
-						<div class="award-1 col-12 col-md-4 justify-content-center">
-							<a
-								href="https://scc.spokane.edu/What-to-Study/STEM/Software-Development"
-								target="_blank"
-								><i class="fas fa-award fa-3x"></i
-							></a>
-							<h3>Spokane Community College</h3>
-							<p>CIS Software Development Program</p>
-						</div>
-						<div class="award-2 col-12 col-md-4 justify-content-center">
-							<a
-								href="https://www.nucamp.co/bootcamp-overview/full-stack-web-mobile-development"
-								target="_blank"
-								><i class="fas fa-award fa-3x"></i
-							></a>
-							<h3>NuCamp</h3>
-							<p>Full Stack and Mobile Developer Program</p>
-						</div>
-						<div class="award-3 col-12 col-md-4 justify-content-center">
-							<a href="https://www.udemy.com/" target="_blank"
-								><i class="fas fa-award fa-3x"></i
-							></a>
-							<h3>Udemy</h3>
-							<p>Full Stack Developer and Graphics Design Courses</p>
-						</div>
-					</section>
+
+			<section class="about-info row">
+				<div class="col-12 col-lg-4 my-lg-auto mb-4">
+					<img src="img/about.jpg" alt="Bio Image" class="bio-image" />
+				</div>
+				<div class="col-12 col-lg-8">
+					<article class="bio bg-light text-left">
+						<h4>2018-Current: Freelance Web and Mobile App Developer</h4>
+						<ul>
+							<li class="about-item ml-3">
+								Used Xd Gatsby, and Shopify to design and develop a complete ecommerce site for Nitehawk
+							</li>
+							<li class="about-item ml-3">Used Wordpress GUI to develop a website for the enviromental
+								project Sedap</li>
+							<li>
+							<li class="about-item ml-3">Used Xd and vanilla JavaScript to develop a website for
+								Rosie Lee's Teas in the UAE</li>
+						</ul>
+						<p>
+							Currently looking for volunteer projects that better my community that involve creating
+							assistive
+							tech for special needs.
+						</p>
+						<br />
+						<h4>June 2021 - Sept 2021: World Wide Group Internship</h4>
+						<ul>
+							<li class="about-item ml-3">
+								Used React and Storybook.js to assist in developing the company's retail media
+								application
+							</li>
+							<li class="about-item ml-3">Was responsible for documenting the application functionality
+								and time estimates</li>
+							<li>
+							<li class="about-item ml-3">Developed key search, sort, and filter functions within the
+								retail application</li>
+						</ul>
+						<br />
+						<h4>2013-2020: United Arab Emirates University and IELTS</h4>
+						<ul>
+							<li class="about-item ml-3">
+								Created over 25 Wordpress sites for content delivery, training, and media distribution
+							</li>
+							<li class="about-item ml-3">Designed and created over 15 iBooks for various curriculum
+								projects</li>
+							<li>
+							<li class="about-item ml-3">Held regular technology trainings to further technology and web
+								development in the classroom</li>
+						</ul>
+
+						<a href="https://drive.google.com/file/d/1uBpkABlWToaPmbUY5OjQSnrygtckUjO3/view?usp=sharing"
+							class="btn-light my-3 link-button" target="_blank">
+							View My Full Resume
+						</a>
+					</article>
 				</div>
 			</section>
+		</section>
+		<section id="about-b" class="my-5 text-center awards py-4">
+			<div class="container">
+				<p class="lead text-center mb-0">Degrees and Programs of Study...</p>
+				<section class="row">
+					<div class="award-1 col-12 col-md-4 justify-content-center">
+						<a href="https://scc.spokane.edu/What-to-Study/STEM/Software-Development" target="_blank"><i
+								class="fas fa-award fa-3x"></i></a>
+						<h3>Spokane Community College</h3>
+						<p>CIS Software Development Program</p>
+					</div>
+					<div class="award-2 col-12 col-md-4 justify-content-center">
+						<a href="https://www.nucamp.co/bootcamp-overview/full-stack-web-mobile-development"
+							target="_blank"><i class="fas fa-award fa-3x"></i></a>
+						<h3>NuCamp</h3>
+						<p>Full Stack and Mobile Developer Program</p>
+					</div>
+					<div class="award-3 col-12 col-md-4 justify-content-center">
+						<a href="https://www.udemy.com/" target="_blank"><i class="fas fa-award fa-3x"></i></a>
+						<h3>Udemy</h3>
+						<p>Full Stack Developer and Graphics Design Courses</p>
+					</div>
+				</section>
+			</div>
+		</section>
 
-			<!-- Section B: Progress Bars
+		<!-- Section B: Progress Bars
 			<section id="about-b" class="bg-dark py-4">
 				<div class="container">
 					<h2 class="section-title">Technical Skills</h2>
@@ -173,84 +176,71 @@
 				</div>
 			</section> -->
 
-			<!-- Section C: Testimonials -->
-			<section id="about-c" class="py-4 mb-4">
-				<div class="container">
-					<section>
-						<p class="lead text-center">
-							Take a look at what they say about me...
+		<!-- Section C: Testimonials -->
+		<section id="about-c" class="py-4 mb-4">
+			<div class="container">
+				<section>
+					<p class="lead text-center">
+						Take a look at what they say about me...
+					</p>
+				</section>
+				<div class="testimonials row">
+					<div class="col-12 col-md-6 col-lg-4 mb-4">
+						<p class="reference-letter">
+							<a href="https://drive.google.com/file/d/1WVckLHwkfuLEi60j6rSQmEfyuUu5KokZ/view?usp=sharing"
+								target="_blank">
+								"Justin is able to adapt quickly to differing project
+								assignments due to changing organizational needs. His
+								positivity, excellent written and verbal communication skills,
+								as well as his dedicated work ethic make him a great asset to
+								any organization.""
+							</a>
 						</p>
-					</section>
-					<div class="testimonials row">
-						<div class="col-12 col-md-6 col-lg-4 mb-4">
-							<p class="reference-letter">
-								<a
-									href="https://drive.google.com/file/d/1WVckLHwkfuLEi60j6rSQmEfyuUu5KokZ/view?usp=sharing"
-									target="_blank"
-								>
-									"Justin is able to adapt quickly to differing project
-									assignments due to changing organizational needs. His
-									positivity, excellent written and verbal communication skills,
-									as well as his dedicated work ethic make him a great asset to
-									any organization.""
-								</a>
-							</p>
-							<ul>
-								<li>
-									<img
-										src="img/testimonials//person2.jpg"
-										alt="Glynda Stiner"
-									/>
-								</li>
-								<li>Glynda Stiner, U.S.A.</li>
-							</ul>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4 mb-4">
-							<p class="reference-letter">
-								<a
-									href="https://drive.google.com/file/d/1l0uTnTLGLGWlHsUmzBzGxXCwF9hFNbck/view?usp=sharing"
-									target="_blank"
-								>
-									"Fundamentally, Justin demonstrated great ability to work
-									under pressure and meet tight deadlines when our course was
-									unexpectedly reduced in contact hours, requiring an immediate
-									rewrite and redesign of both curriculum, materials and
-									assessment. Without Justin’s considerable technical expertise,
-									this task may well have been insurmountable."</a
-								>
-							</p>
-							<ul>
-								<li>
-									<img
-										src="img/testimonials//person3.jpg"
-										alt="David Wallace"
-									/>
-								</li>
-								<li>David Wallace, New Zealand</li>
-							</ul>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4 mb-4">
-							<p class="reference-letter">
-								<a
-									href="https://drive.google.com/file/d/1uU5bMNc5wzcwqak60Z1-rCS3qLmERp09/view?usp=sharing"
-									target="_blank"
-									>"Justin has excellent interpersonal skills and is accustomed
-									to working in a dynamic multicultural environment...he is
-									always flexible, cooperative, energetic and enthusiastic and
-									possesses creative ideas."</a
-								>
-							</p>
-							<ul>
-								<li>
-									<img src="img/testimonials//person4.jpg" alt="Ann Akin" />
-								</li>
-								<li>Ann Akin, U.K.</li>
-							</ul>
-						</div>
+						<ul>
+							<li>
+								<img src="img/testimonials//person2.jpg" alt="Glynda Stiner" />
+							</li>
+							<li>Glynda Stiner, U.S.A.</li>
+						</ul>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4 mb-4">
+						<p class="reference-letter">
+							<a href="https://drive.google.com/file/d/1l0uTnTLGLGWlHsUmzBzGxXCwF9hFNbck/view?usp=sharing"
+								target="_blank">
+								"Fundamentally, Justin demonstrated great ability to work
+								under pressure and meet tight deadlines when our course was
+								unexpectedly reduced in contact hours, requiring an immediate
+								rewrite and redesign of both curriculum, materials and
+								assessment. Without Justin’s considerable technical expertise,
+								this task may well have been insurmountable."</a>
+						</p>
+						<ul>
+							<li>
+								<img src="img/testimonials//person3.jpg" alt="David Wallace" />
+							</li>
+							<li>David Wallace, New Zealand</li>
+						</ul>
+					</div>
+					<div class="col-12 col-md-6 col-lg-4 mb-4">
+						<p class="reference-letter">
+							<a href="https://drive.google.com/file/d/1uU5bMNc5wzcwqak60Z1-rCS3qLmERp09/view?usp=sharing"
+								target="_blank">"Justin has excellent interpersonal skills and is accustomed
+								to working in a dynamic multicultural environment...he is
+								always flexible, cooperative, energetic and enthusiastic and
+								possesses creative ideas."</a>
+						</p>
+						<ul>
+							<li>
+								<img src="img/testimonials//person4.jpg" alt="Ann Akin" />
+							</li>
+							<li>Ann Akin, U.K.</li>
+						</ul>
 					</div>
 				</div>
-			</section>
-		</main>
-		<%- include('./partials/footer') %>
-	</body>
+			</div>
+		</section>
+	</main>
+	<%- include('./partials/footer') %>
+</body>
+
 </html>
